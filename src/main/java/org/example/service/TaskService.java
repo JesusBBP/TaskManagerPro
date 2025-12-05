@@ -43,4 +43,7 @@ public class TaskService {
         }
         return false;
     }
+    public int getTaskCount() {
+        return tasks.size();
+    }
 }
