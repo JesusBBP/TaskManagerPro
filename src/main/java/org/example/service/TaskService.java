@@ -46,4 +46,9 @@ public class TaskService {
     public int getTaskCount() {
         return tasks.size();
     }
+    public List<Task> getCompletedTasks() {
+        return tasks.stream()
+                .filter(Task::isCompleted)
+                .collect(java.util.stream.Collectors.toList());
+    }
 }
