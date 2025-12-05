@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.Task;
+import org.example.model.Task;
 
 import java.util.ArrayList;
 import java.util.List;
