@@ -1,0 +1,14 @@
+# TaskManager Pro
+
+Proyecto de práctica para aprender Git, Testing y Debugging profesional.
+
+## Características
+- Gestión de tareas
+- CRUD básico
+- Testing con JUnit
+- CI/CD con GitHub Actions
+
+## Tecnologías
+- Java 17
+- Maven
+- JUnit 5
