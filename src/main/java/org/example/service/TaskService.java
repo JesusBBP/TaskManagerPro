@@ -1,6 +1,6 @@
 package org.example.service;
 
-import com.taskmanager.model.Task;
+import org.example.model.Task;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -51,5 +51,10 @@ public class TaskService {
         return tasks.stream()
                 .filter(Task::isCompleted)
                 .collect(java.util.stream.Collectors.toList());
+    }
+    public int deleteCompletedTasks() {
+        int initialSize = tasks.size();
+        tasks.removeIf(Task::isCompleted);
+        return initialSize - tasks.size(); // Retorna cuántas eliminó
     }
 }
