@@ -4,6 +4,7 @@ import org.example.model.Task;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TaskService {
     private List<Task> tasks;
@@ -57,4 +58,15 @@ public class TaskService {
         tasks.removeIf(Task::isCompleted);
         return initialSize - tasks.size(); // Retorna cuántas eliminó
     }
+    public List<Task> getTasksByIds(List<Long> ids) {
+        if (ids == null || ids.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        return tasks.stream()
+                .filter(task -> ids.contains(task.getId()))
+                .collect(Collectors.toList());
+    }
+
+
 }
