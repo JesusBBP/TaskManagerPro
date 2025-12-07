@@ -1,6 +1,6 @@
 package org.example.service;
 
-import com.taskmanager.model.Task;
+import org.example.model.Task;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
