@@ -1,7 +1,6 @@
 package org.example.service;
 
-import org.example.model.Task;
-
+import com.taskmanager.model.Task;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -43,9 +42,11 @@ public class TaskService {
         }
         return false;
     }
+
     public int getTaskCount() {
         return tasks.size();
     }
+
     public List<Task> getCompletedTasks() {
         return tasks.stream()
                 .filter(Task::isCompleted)
