@@ -67,6 +67,13 @@ public class TaskService {
                 .filter(task -> ids.contains(task.getId()))
                 .collect(Collectors.toList());
     }
+    public boolean hasTaskWithTitle(String title) {
+        if (title == null || title.trim().isEmpty()) {
+            return false;
+        }
 
+        return tasks.stream()
+                .anyMatch(task -> task.getTitle().equalsIgnoreCase(title.trim()));
+    }
 
 }
