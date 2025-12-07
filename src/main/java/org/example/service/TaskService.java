@@ -52,4 +52,9 @@ public class TaskService {
                 .filter(Task::isCompleted)
                 .collect(java.util.stream.Collectors.toList());
     }
+    public int deleteCompletedTasks() {
+        int initialSize = tasks.size();
+        tasks.removeIf(Task::isCompleted);
+        return initialSize - tasks.size(); // Retorna cuántas eliminó
+    }
 }
